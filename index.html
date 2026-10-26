@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MusicFlow — Trang Chủ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">🎵</span>
+      <span class="logo-text">MusicFlow</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Trang Chủ</a></li>
+      <li><a href="explore.html">Khám Phá</a></li>
+      <li><a href="playlist.html">Playlist</a></li>
+      <li><a href="library.html">Thư Viện</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="search-bar">
+        <input type="text" placeholder="Tìm bài hát, nghệ sĩ, album..." id="navSearch" />
+        <button onclick="goSearch()" aria-label="Tìm kiếm">🔍</button>
+      </div>
+      <button class="btn-login" onclick="location.href='login.html'">Đăng Nhập</button>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+      <div class="hero-text">
+        <h1>Âm nhạc dành riêng cho bạn</h1>
+        <p>Khám phá hàng triệu bài hát từ mọi thể loại</p>
+        <button class="btn-primary" onclick="location.href='explore.html'">Khám Phá Ngay</button>
+      </div>
+      <div class="hero-visual">
+        <div class="vinyl-disc">
+          <div class="vinyl-center"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GỢI Ý CHO BẠN -->
+    <section class="section">
+      <div class="section-header">
+        <h2>🎯 Gợi Ý Cho Bạn</h2>
+        <a href="explore.html" class="see-all">Xem tất cả</a>
+      </div>
+      <div class="cards-row">
+        <!-- ★ BÀI NỔI BẬT: Có Hẹn Với Thanh Xuân - Gauci (Ca Sĩ Mặt Nạ 2026) -->
+        <div class="music-card featured-card" onclick="playSong('Có Hẹn Với Thanh Xuân', 'GAUCI', '')">
+          <div class="card-cover gradient-1" style="position:relative;">
+            <div class="card-img-placeholder">�</div>
+            <div style="position:absolute;top:6px;left:6px;background:#e53e3e;color:#fff;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:10px;">MỚI</div>
+            <button class="card-play-btn">▶</button>
+          </div>
+          <div class="card-info">
+            <span class="card-title">Có Hẹn Với Thanh Xuân</span>
+            <span class="card-sub">GAUCI (Ca Sĩ Mặt Nạ 2026)</span>
+          </div>
+        </div>
+        <!-- Bản gốc MONSTAR -->
+        <div class="music-card" onclick="playSong('Có Hẹn Với Thanh Xuân', 'MONSTAR', '')">
+          <div class="card-cover gradient-2">
+            <div class="card-img-placeholder">�</div>
+            <button class="card-play-btn">▶</button>
+          </div>
+          <div class="card-info">
+            <span class="card-title">Có Hẹn Với Thanh Xuân</span>
+            <span class="card-sub">MONSTAR (bản gốc 2021)</span>
+          </div>
+        </div>
+        <div class="music-card" onclick="playSong('Chạy Ngay Đi', 'Sơn Tùng M-TP', '')">
+          <div class="card-cover gradient-3">
+            <div class="card-img-placeholder">🎵</div>
+            <button class="card-play-btn">▶</button>
+          </div>
+          <div class="card-info">
+            <span class="card-title">Chạy Ngay Đi</span>
+            <span class="card-sub">Sơn Tùng M-TP</span>
+          </div>
+        </div>
+        <div class="music-card" onclick="playSong('Dynamite', 'BTS', '')">
+          <div class="card-cover gradient-4">
+            <div class="card-img-placeholder">�</div>
+            <button class="card-play-btn">▶</button>
+          </div>
+          <div class="card-info">
+            <span class="card-title">Dynamite</span>
+            <span class="card-sub">BTS</span>
+          </div>
+        </div>
+        <div class="music-card" onclick="playSong('Blinding Lights', 'The Weeknd', '')">
+          <div class="card-cover gradient-5">
+            <div class="card-img-placeholder">🌃</div>
+            <button class="card-play-btn">▶</button>
+          </div>
+          <div class="card-info">
+            <span class="card-title">Blinding Lights</span>
+            <span class="card-sub">The Weeknd</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NGHE GẦN ĐÂY -->
+    <section class="section">
+      <div class="section-header">
+        <h2>🕐 Nghe Gần Đây</h2>
+        <a href="library.html" class="see-all">Xem tất cả</a>
+      </div>
+      <div class="recent-list">
+        <div class="recent-item" onclick="playSong('Chạy Ngay Đi', 'Sơn Tùng M-TP', '')">
+          <div class="recent-cover gradient-1">🎵</div>
+          <div class="recent-info">
+            <span class="recent-title">Chạy Ngay Đi</span>
+            <span class="recent-artist">Sơn Tùng M-TP</span>
+          </div>
+          <span class="recent-duration">3:48</span>
+          <button class="btn-icon-sm" aria-label="Phát">▶</button>
+        </div>
+        <div class="recent-item" onclick="playSong('Muộn Rồi Mà Sao Còn', 'Sơn Tùng M-TP', '')">
+          <div class="recent-cover gradient-2">🌙</div>
+          <div class="recent-info">
+            <span class="recent-title">Muộn Rồi Mà Sao Còn</span>
+            <span class="recent-artist">Sơn Tùng M-TP</span>
+          </div>
+          <span class="recent-duration">4:02</span>
+          <button class="btn-icon-sm" aria-label="Phát">▶</button>
+        </div>
+        <div class="recent-item" onclick="playSong('Bước Qua Nhau', 'Tăng Duy Tân', '')">
+          <div class="recent-cover gradient-3">🌺</div>
+          <div class="recent-info">
+            <span class="recent-title">Bước Qua Nhau</span>
+            <span class="recent-artist">Tăng Duy Tân</span>
+          </div>
+          <span class="recent-duration">4:12</span>
+          <button class="btn-icon-sm" aria-label="Phát">▶</button>
+        </div>
+        <div class="recent-item" onclick="playSong('Hoa Nở Không Màu', 'Hoài Lâm', '')">
+          <div class="recent-cover gradient-4">🌷</div>
+          <div class="recent-info">
+            <span class="recent-title">Hoa Nở Không Màu</span>
+            <span class="recent-artist">Hoài Lâm</span>
+          </div>
+          <span class="recent-duration">4:55</span>
+          <button class="btn-icon-sm" aria-label="Phát">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- THỂ LOẠI NỔI BẬT -->
+    <section class="section">
+      <div class="section-header">
+        <h2>🎼 Thể Loại Nổi Bật</h2>
+        <a href="explore.html" class="see-all">Xem tất cả</a>
+      </div>
+      <div class="genre-grid">
+        <div class="genre-chip pop" onclick="location.href='explore.html#pop'">Pop</div>
+        <div class="genre-chip kpop" onclick="location.href='explore.html#kpop'">K-Pop</div>
+        <div class="genre-chip rnb" onclick="location.href='explore.html#rnb'">R&amp;B</div>
+        <div class="genre-chip rock" onclick="location.href='explore.html#rock'">Rock</div>
+        <div class="genre-chip jazz" onclick="location.href='explore.html#jazz'">Jazz</div>
+        <div class="genre-chip lofi" onclick="location.href='explore.html#lofi'">Lofi</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MUSIC PLAYER BAR -->
+  <div class="player-bar" id="playerBar">
+    <div class="player-song-info">
+      <div class="player-cover gradient-1" id="barCover">🎵</div>
+      <div class="player-meta">
+        <span class="player-title" id="playerTitle">Nhấn ▶ để phát nhạc</span>
+        <span class="player-artist" id="playerArtist">MusicFlow</span>
+      </div>
+      <button class="btn-icon" id="likeBarBtn" onclick="toggleLikeBar()" aria-label="Yêu thích">♡</button>
+    </div>
+    <div class="player-controls">
+      <button class="btn-icon" id="shuffleBarBtn" onclick="toggleShuffleBar()" aria-label="Trộn bài" title="Trộn bài">⇄</button>
+      <button class="btn-icon" onclick="playPrev()" aria-label="Bài trước">⏮</button>
+      <button class="btn-play-main" id="playPauseBtn" onclick="togglePlay()" aria-label="Phát/Dừng">▶</button>
+      <button class="btn-icon" onclick="playNext()" aria-label="Bài sau">⏭</button>
+      <button class="btn-icon" id="repeatBarBtn" onclick="toggleRepeatBar()" aria-label="Lặp lại">↺</button>
+    </div>
+    <div class="player-progress-area">
+      <span class="player-time" id="currentTime">0:00</span>
+      <div class="progress-bar" onclick="seekAudio(event)" role="progressbar" aria-label="Tiến trình bài hát" style="cursor:pointer;">
+        <div class="progress-fill" id="progressFill" style="width:0%"></div>
+      </div>
+      <span class="player-time" id="totalTime">0:00</span>
+    </div>
+    <div class="player-right">
+      <button class="btn-icon" aria-label="Hàng đợi" title="Hàng đợi">≡</button>
+      <span class="vol-icon">🔊</span>
+      <input type="range" class="volume-slider" min="0" max="100" value="70" aria-label="Âm lượng" oninput="setVolume(this.value)" />
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    let _shuffle = false, _repeat = false, _liked = false;
+    function toggleShuffleBar() {
+      _shuffle = !_shuffle;
+      document.getElementById('shuffleBarBtn').style.color = _shuffle ? 'var(--green)' : '';
+    }
+    function toggleRepeatBar() {
+      _repeat = !_repeat;
+      document.getElementById('repeatBarBtn').style.color = _repeat ? 'var(--green)' : '';
+      if (typeof audioEl !== 'undefined' && audioEl) audioEl.loop = _repeat;
+    }
+    function toggleLikeBar() {
+      _liked = !_liked;
+      const btn = document.getElementById('likeBarBtn');
+      btn.textContent = _liked ? '♥' : '♡';
+      btn.style.color = _liked ? '#e53e3e' : '';
+    }
+  </script>
+</body>
+</html>
